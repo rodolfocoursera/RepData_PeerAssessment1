@@ -135,8 +135,19 @@ plot(x = average.steps$interval, y = average.steps$steps, type = "l", , xlab = "
 ![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7.png) 
 
 
-## Imputing missing values
+### Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
+```r
+average.steps[average.steps$steps == max(average.steps$steps), ]
+```
+
+```
+##    interval steps
+## 1:      835 206.2
+```
+
+
+## Imputing missing values
 ### Calculates and reports the total number of missing values in the dataset
 
 ```r
@@ -186,7 +197,7 @@ total.steps.new <- steps.dt.new[, list(steps = sum(steps)), by = date]
 hist(total.steps.new$steps, main = "Total number of steps taken each day", xlab = "Steps")
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11.png) 
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12.png) 
 
 
 ### Calculate and report the mean and median total number of steps taken per day.
@@ -291,7 +302,7 @@ plot(x = average.steps.weekend$interval, y = average.steps.weekend$steps, type =
     , ylab = "Steps", xlab = "Interval", main = "Average of steps. Weekends")
 ```
 
-![plot of chunk unnamed-chunk-17](figure/unnamed-chunk-17.png) 
+![plot of chunk unnamed-chunk-18](figure/unnamed-chunk-18.png) 
 
 
 
